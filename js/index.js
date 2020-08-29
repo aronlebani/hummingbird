@@ -24,15 +24,20 @@ function flatten(bookmarks, folder, result) {
 function render(bookmarks) {
   const rootNode = document.getElementById("root");
 
-  const folderListNode = document.createElement("ul");
+  const folderListNode = document.createElement("section");
+  folderListNode.id = "base";
   bookmarks.forEach(folder => {
-    const folderNode = document.createElement("li");
-    folderNode.innerText = folder.name;
+    const folderNode = document.createElement("section");
+    folderNode.id = "card";
+    const h2 = document.createElement("h2");
+    h2.innerText = folder.name;
+    folderNode.appendChild(h2);
 
     const fileListNode = document.createElement("ul");
     folder.files.forEach(file => {
       const fileNode = document.createElement("li");
       const linkNode = document.createElement("a");
+      linkNode.id = "link"
       linkNode.innerText = file.name;
       linkNode.href = file.href;
       linkNode.target = '_blank';
