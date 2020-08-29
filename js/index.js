@@ -21,21 +21,22 @@ function flatten(bookmarks, folder, result) {
   result.push(category);
 }
 
-function renderBookmarks(bookmarks) {
-  const rootNode = document.getElementById("bookmarks");
-  
-  const flattened = [];
-  flatten(bookmarks[0].children, "root", flattened);
+function render(bookmarks) {
+  const rootNode = document.getElementById("root");
 
   const folderListNode = document.createElement("ul");
-  flattened.forEach(folder => {
+  bookmarks.forEach(folder => {
     const folderNode = document.createElement("li");
     folderNode.innerText = folder.name;
 
     const fileListNode = document.createElement("ul");
     folder.files.forEach(file => {
       const fileNode = document.createElement("li");
-      fileNode.innerText = file.name;
+      const linkNode = document.createElement("a");
+      linkNode.innerText = file.name;
+      linkNode.href = file.href;
+      linkNode.target = '_blank';
+      fileNode.appendChild(linkNode);
 
       fileListNode.appendChild(fileNode);
     });
@@ -44,7 +45,35 @@ function renderBookmarks(bookmarks) {
     folderListNode.appendChild(folderNode);
   });
 
+  if (rootNode.childNodes[0]) {
+    rootNode.removeChild(rootNode.childNodes[0]);
+  }
   rootNode.appendChild(folderListNode);
 }
 
-chrome.bookmarks.getTree(renderBookmarks);
+function handleSearch(e) {
+  const query = e.target.value;
+  const re = new RegExp(query && query.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'), 'i');
+  const bookmarks = JSON.parse(JSON.stringify(window.bookmarks)).filter(bookmark => {
+    const files = bookmark.files.filter(file => {
+      return file.name.search(re) !== -1;
+    });
+    bookmark.files = files;
+    return files.length > 0;
+  });
+  render(bookmarks);
+}
+
+function main() {
+  chrome.bookmarks.getTree(results => {
+    const flattened = [];
+    flatten(results[0].children, "root", flattened);
+    console.log("--flattened", flattened)
+    window.bookmarks = flattened;
+    render(window.bookmarks);
+  });
+
+  document.getElementById("search").addEventListener("input", handleSearch);
+}
+
+window.onload = main;
