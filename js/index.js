@@ -28,11 +28,16 @@ function render(bookmarks) {
   folderListNode.id = "base";
   bookmarks.forEach(folder => {
     const folderNode = document.createElement("section");
-    folderNode.id = "card";
+    folderNode.classList.add("card");
+    const header = document.createElement("div");
+    header.classList.add("card-header");
+    folderNode.appendChild(header);
     const h2 = document.createElement("h2");
     h2.innerText = folder.name;
-    folderNode.appendChild(h2);
+    header.appendChild(h2);
 
+    const body = document.createElement("div");
+    body.classList.add("card-body");
     const fileListNode = document.createElement("ul");
     folder.files.forEach(file => {
       const fileNode = document.createElement("li");
@@ -45,7 +50,8 @@ function render(bookmarks) {
       fileListNode.appendChild(fileNode);
     });
 
-    folderNode.appendChild(fileListNode);
+    body.appendChild(fileListNode);
+    folderNode.appendChild(body);
     folderListNode.appendChild(folderNode);
   });
 
@@ -83,6 +89,14 @@ function handleKeyup(e) {
   }
 }
 
+function handleHelpClick() {
+  document.getElementById("dialog").style.display = "block";
+}
+
+function handleHelpCloseClick() {
+  document.getElementById("dialog").style.display = "none";
+}
+
 function main() {
   chrome.bookmarks.getTree(results => {
     const flattened = [];
@@ -93,6 +107,8 @@ function main() {
 
   document.getElementById("search").addEventListener("input", handleSearch);
   document.addEventListener("keyup", handleKeyup);
+  document.getElementById("help").addEventListener("click", handleHelpClick);
+  document.getElementById("close").addEventListener("click", handleHelpCloseClick)
 }
 
 window.onload = main;

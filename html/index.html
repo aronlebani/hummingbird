@@ -12,15 +12,32 @@
   <body>
     <header>
       <section id="header-inner">
-        <div id="title">
-          <img src="/assets/icon.svg" alt="icon">
+        <div id="header-logo" class="group">
+          <img id="icon" src="/assets/icon.svg" alt="icon">
           <h1>Bookmarks</h1>
         </div>
-        <input type="text" id="search" name="search" placeholder="Search for anything...">
+        <div class="group">
+          <input type="text" id="search" name="search" placeholder="Search for anything...">
+          <img id="help" src="/assets/question-circle.svg" alt="help">
+        </div>
       </section>
     </header>
     <main>
       <div id="root"></div>
+      <section id="dialog" class="card">
+        <div id="dialog-header" class="card-header">
+          <h2>Help</h2>
+          <img id="close" src="/assets/times-circle-regular.svg" alt="close">
+        </div>
+        <div class="card-body">
+          <h3>Keyboard shortcuts</h3>
+          <p><strong>f</strong> = Focus search bar</p>
+          <p><strong>Esc</strong> = Focus page</p>
+          <p><Strong>Tab</Strong> = Navigate through bookmarks</p>
+          <p><Strong>Enter</Strong> = Open bookmark</p>
+          <p><strong>Shift + Enter</strong> = Open bookmark in new tab</p>
+        </div>
+      </section>
     </main>
   </body>
 </html>

@@ -27,15 +27,11 @@ ul {
   margin-top: 0;
 }
 
-h1 {
+h1, h2, h3, p {
   color: #444444;
 }
 
 h2 {
-  margin: 0;
-  padding: 8px;
-  border-bottom: 1px solid #c2c2c2;
-  color: #444444;
   font-size: 16px;
 }
 
@@ -57,14 +53,24 @@ input {
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
 }
 
-#title {
+.group {
   display: flex;
   align-items: center;
 }
 
-#title>img {
+#icon {
   height: 24px;
   margin-right: 6px;
+}
+
+#header-logo {
+  cursor: pointer;
+}
+
+#help {
+  height: 20px;
+  margin-left: 12px;
+  cursor: pointer;
 }
 
 #root {
@@ -80,7 +86,7 @@ input {
   flex-wrap: wrap;
 }
 
-#card {
+.card {
   border: 1px solid #c2c2c2;
   border-radius: 8px;
   margin-bottom: 12px;
@@ -90,8 +96,13 @@ input {
   background-color: #fff;
 }
 
-#card>ul {
+.card-body {
   padding: 8px;
+}
+
+.card-header {
+  padding: 0 8px;
+  border-bottom: 1px solid #c2c2c2;
 }
 
 #link {
@@ -100,6 +111,31 @@ input {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -115px;
+  margin-left: -150px;
+  height: 230px;
+  width: 300px;
+  border: 1px solid #c2c2c2;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+  display: none;
+}
+
+#close {
+  height: 16px;
+}
+
+#dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #tmp {
