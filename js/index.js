@@ -99,10 +99,13 @@ function handleHelpCloseClick() {
 
 function main() {
   chrome.bookmarks.getTree(results => {
-    const flattened = [];
+    let flattened = [];
     flatten(results[0].children, "root", flattened);
+    flattened = flattened
+      .filter(x => x.name.toLowerCase() != 'ignore')
+      .filter(x => x.files.length > 0);
     window.bookmarks = flattened;
-    render(window.bookmarks.filter(bookmark => bookmark.files.length > 0));
+    render(window.bookmarks);
   });
 
   document.getElementById("search").addEventListener("input", handleSearch);

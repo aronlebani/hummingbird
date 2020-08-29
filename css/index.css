@@ -32,7 +32,7 @@ h1, h2, h3, p {
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 input {
@@ -130,6 +130,7 @@ input {
 
 #close {
   height: 16px;
+  cursor: pointer;
 }
 
 #dialog-header {
