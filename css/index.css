@@ -33,8 +33,17 @@ h1 {
 
 h2 {
   margin: 0;
-  margin-bottom: 8px;
+  padding: 8px;
   border-bottom: 1px solid #c2c2c2;
+}
+
+input {
+  height: 24px;
+  width: 300px;
+  border: 1px solid #c2c2c2;
+  border-radius: 4px;
+  color: #c2c2c2;
+  padding: 6px;
 }
 
 #header-inner {
@@ -62,12 +71,15 @@ h2 {
 #card {
   border: 1px solid #c2c2c2;
   border-radius: 8px;
-  padding: 12px;
   margin-bottom: 12px;
   margin-right: 12px;
   width: 20%;
   flex-basis: auto;
   background-color: #fff;
+}
+
+#card>ul {
+  padding: 8px;
 }
 
 #link {
@@ -76,4 +88,10 @@ h2 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#tmp {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
