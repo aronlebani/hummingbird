@@ -30,7 +30,7 @@ function render(bookmarks) {
     const folderNode = document.createElement("section");
     folderNode.id = "card";
     const h2 = document.createElement("h2");
-    h2.innerText = folder.name;
+    h2.innerText = '#' + folder.name;
     folderNode.appendChild(h2);
 
     const fileListNode = document.createElement("ul");
@@ -75,7 +75,7 @@ function main() {
     flatten(results[0].children, "root", flattened);
     console.log("--flattened", flattened)
     window.bookmarks = flattened;
-    render(window.bookmarks);
+    render(window.bookmarks.filter(bookmark => bookmark.files.length > 0));
   });
 
   document.getElementById("search").addEventListener("input", handleSearch);

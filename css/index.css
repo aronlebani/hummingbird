@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #f5f6f7;
 }
 
 header {
@@ -7,13 +8,14 @@ header {
   left: 0;
   top: 0;
   width: 100vw;
-  height: 100px;
+  height: 60px;
+  background-color: #fff;
 }
 
 main {
   width: 100vw;
   height: 100vh;
-  padding-top: 100px;
+  padding-top: 60px;
 }
 
 li {
@@ -21,7 +23,27 @@ li {
 }
 
 ul {
-padding-inline-start: 0;
+  padding-inline-start: 0;
+  margin-top: 0;
+}
+
+h1 {
+
+}
+
+h2 {
+  margin: 0;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #c2c2c2;
+}
+
+#header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
 }
 
 #root {
@@ -30,6 +52,8 @@ padding-inline-start: 0;
 
 #base {
   height: 100%;
+  padding: 12px;
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -39,11 +63,11 @@ padding-inline-start: 0;
   border: 1px solid #c2c2c2;
   border-radius: 8px;
   padding: 12px;
-  margin-right: 12px;
   margin-bottom: 12px;
+  margin-right: 12px;
   width: 20%;
   flex-basis: auto;
-  max-height: 100%;
+  background-color: #fff;
 }
 
 #link {
