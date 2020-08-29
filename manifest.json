@@ -1,0 +1,13 @@
+{
+  "name": "Simple Bookmarks",
+  "version": "1.0",
+  "description": "A dead simple bookmarks manager",
+  "manifest_version": 2,
+  "chrome_url_overrides" : {
+    "newtab": "html/index.html"
+  },
+  "permissions": [
+    "bookmarks"
+  ],
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
