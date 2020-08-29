@@ -40,7 +40,6 @@ function render(bookmarks) {
       linkNode.id = "link"
       linkNode.innerText = file.name;
       linkNode.href = file.href;
-      linkNode.target = '_blank';
       fileNode.appendChild(linkNode);
 
       fileListNode.appendChild(fileNode);
@@ -70,7 +69,6 @@ function handleSearch(e) {
 }
 
 function handleKeyup(e) {
-  console.log(e.code)
   switch (e.code) {
     case "KeyF":
       document.getElementById("search").focus();

@@ -3,6 +3,11 @@
   "version": "1.0",
   "description": "A dead simple bookmarks manager",
   "manifest_version": 2,
+  "icons": {
+    "16": "assets/favicon-16x16.png",
+    "32": "assets/favicon-32x32.png",
+    "128": "assets/favicon-128.png"
+  },
   "chrome_url_overrides" : {
     "newtab": "html/index.html"
   },

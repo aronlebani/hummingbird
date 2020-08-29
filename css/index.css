@@ -28,13 +28,15 @@ ul {
 }
 
 h1 {
-
+  color: #444444;
 }
 
 h2 {
   margin: 0;
   padding: 8px;
   border-bottom: 1px solid #c2c2c2;
+  color: #444444;
+  font-size: 16px;
 }
 
 input {
@@ -55,6 +57,16 @@ input {
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
 }
 
+#title {
+  display: flex;
+  align-items: center;
+}
+
+#title>img {
+  height: 24px;
+  margin-right: 6px;
+}
+
 #root {
   height: 100%;
 }
@@ -73,7 +85,7 @@ input {
   border-radius: 8px;
   margin-bottom: 12px;
   margin-right: 12px;
-  width: 20%;
+  width: 24%;
   flex-basis: auto;
   background-color: #fff;
 }
