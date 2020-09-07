@@ -61,6 +61,28 @@ function render(bookmarks) {
   rootNode.appendChild(folderListNode);
 }
 
+function focusSearch() {
+  document.getElementById("search").focus();
+}
+
+function focusPage() {
+  const tmp = document.createElement("input");
+  tmp.id = "tmp"
+  document.body.appendChild(tmp);
+  tmp.focus();
+  document.body.removeChild(tmp);
+}
+
+function openHelp() {
+  document.getElementById("dialog").style.display = "block";
+  document.getElementById("root").style.opacity = "40%";
+}
+
+function closeHelp() {
+  document.getElementById("dialog").style.display = "none";
+  document.getElementById("root").style.opacity = "100%";
+}
+
 function handleSearch(e) {
   const query = e.target.value;
   const re = new RegExp(query && query.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'), 'i');
@@ -77,24 +99,23 @@ function handleSearch(e) {
 function handleKeyup(e) {
   switch (e.code) {
     case "KeyF":
-      document.getElementById("search").focus();
+      focusSearch();
       return;
     case "Escape":
-      const tmp = document.createElement("input");
-      tmp.id = "tmp"
-      document.body.appendChild(tmp);
-      tmp.focus();
-      document.body.removeChild(tmp);
+      focusPage();
+      return;
+    case "KeyH":
+      openHelp();
       return;
   }
 }
 
 function handleHelpClick() {
-  document.getElementById("dialog").style.display = "block";
+  openHelp();
 }
 
 function handleHelpCloseClick() {
-  document.getElementById("dialog").style.display = "none";
+  closeHelp();
 }
 
 function main() {

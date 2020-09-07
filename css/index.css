@@ -114,12 +114,12 @@ input {
 }
 
 #dialog {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -115px;
+  margin-top: -220px;
   margin-left: -150px;
-  height: 230px;
+  height: 440px;
   width: 300px;
   border: 1px solid #c2c2c2;
   border-radius: 8px;
