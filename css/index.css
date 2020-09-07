@@ -10,12 +10,15 @@ header {
   width: 100vw;
   height: 60px;
   background-color: #fff;
+  z-index: 1;
 }
 
 main {
+  position: absolute;
+  left: 0;
+  top: 60px;
   width: 100vw;
-  height: 100vh;
-  padding-top: 60px;
+  height: calc(100vh - 60px);
 }
 
 li {
@@ -50,7 +53,8 @@ input {
   align-items: center;
   height: 100%;
   padding: 0 12px;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+  /* box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06); */
+  border-bottom: 1px solid #c2c2c2;
 }
 
 .group {
@@ -82,8 +86,7 @@ input {
   padding: 12px;
   padding-bottom: 0;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
 }
 
 .card {
