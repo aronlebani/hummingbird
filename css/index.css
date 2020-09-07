@@ -16,9 +16,9 @@ header {
 main {
   position: absolute;
   left: 0;
-  top: 60px;
+  top: 0;
   width: 100vw;
-  height: calc(100vh - 60px);
+  padding-top: 60px;
 }
 
 li {
@@ -44,7 +44,7 @@ input {
   border: 1px solid #c2c2c2;
   border-radius: 4px;
   color: #c2c2c2;
-  padding: 6px;
+  padding: 0.5em;
 }
 
 #header-inner {
@@ -52,8 +52,7 @@ input {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 0 12px;
-  /* box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06); */
+  padding: 0 1em;
   border-bottom: 1px solid #c2c2c2;
 }
 
@@ -64,7 +63,7 @@ input {
 
 #icon {
   height: 24px;
-  margin-right: 6px;
+  margin-right: 0.5em;
 }
 
 #header-logo {
@@ -73,7 +72,7 @@ input {
 
 #help {
   height: 20px;
-  margin-left: 12px;
+  margin-left: 1em;
   cursor: pointer;
 }
 
@@ -82,29 +81,27 @@ input {
 }
 
 #base {
-  height: 100%;
-  padding: 12px;
+  padding: 1em;
   padding-bottom: 0;
-  display: flex;
-  flex-flow: column wrap;
+  column-count: 4;
+  column-gap: 1em;
 }
 
 .card {
   border: 1px solid #c2c2c2;
   border-radius: 8px;
-  margin-bottom: 12px;
-  margin-right: 12px;
-  width: 24%;
-  flex-basis: auto;
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
   background-color: #fff;
 }
 
 .card-body {
-  padding: 8px;
+  padding: 0.66em;
 }
 
 .card-header {
-  padding: 0 8px;
+  padding: 0 0.66em;
   border-bottom: 1px solid #c2c2c2;
 }
 
