@@ -97,15 +97,13 @@ function handleSearch(e) {
 }
 
 function handleKeyup(e) {
+  console.log(e.code)
   switch (e.code) {
-    case "KeyF":
+    case "Slash":
       focusSearch();
       return;
     case "Escape":
       focusPage();
-      return;
-    case "KeyH":
-      openHelp();
       return;
   }
 }
