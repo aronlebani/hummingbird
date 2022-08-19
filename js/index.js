@@ -78,6 +78,12 @@ function openHelp() {
   document.getElementById("root").style.opacity = "40%";
 }
 
+function openSettings() {
+  // window.open("chrome://bookmarks/");
+  document.dispatchEvent(new KeyboardEvent('keydown',{'key':'58'}));
+  document.dispatchEvent(new KeyboardEvent('keydown',{'key':'55'}));
+}
+
 function closeHelp() {
   document.getElementById("dialog").style.display = "none";
   document.getElementById("root").style.opacity = "100%";
@@ -112,6 +118,10 @@ function handleHelpClick() {
   openHelp();
 }
 
+function handleSettingsClick() {
+  openSettings();
+}
+
 function handleHelpCloseClick() {
   closeHelp();
 }
@@ -130,6 +140,7 @@ function main() {
   document.getElementById("search").addEventListener("input", handleSearch);
   document.addEventListener("keyup", handleKeyup);
   document.getElementById("help").addEventListener("click", handleHelpClick);
+  document.getElementById("settings").addEventListener("click", handleSettingsClick);
   document.getElementById("close").addEventListener("click", handleHelpCloseClick)
 }
 

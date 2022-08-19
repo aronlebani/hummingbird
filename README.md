@@ -20,3 +20,6 @@ Hummingbird displays all your bookmarks every time you open a new tab, grouped b
 Hummingbird is designed to be as simple as possible and only supports a single level of folder hierarchy. It will display a flattened version of your bookmark folders, but won't touch the structure of your actual bookmarks.
 
 Hummingbird doesn't create, delete, or manage your bookmarks, it simply allows you to navigate them quickly and easily. Managing your bookmarks can be done with Chrome's built in bookmark manager (or a third party bookmark manager).
+
+## Future Feature Ideas
+- [ ] Most frequently clicked bookmarks

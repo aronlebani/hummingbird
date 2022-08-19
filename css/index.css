@@ -70,6 +70,10 @@ input {
   cursor: pointer;
 }
 
+#settings {
+  cursor: pointer;  
+}
+
 #help {
   height: 20px;
   margin-left: 1em;
