@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-color: #f5f6f7;
+  font-family: sans;
 }
 
 header {
@@ -32,6 +33,10 @@ ul {
 
 h1, h2, h3, p {
   color: #444444;
+}
+
+h1 {
+  font-size: 16px;
 }
 
 h2 {
@@ -117,10 +122,9 @@ input {
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -220px;
-  margin-left: -150px;
-  height: 440px;
-  width: 300px;
+  transform: translate(-50%, -50%);
+  height: 460px;
+  width: 600px;
   border: 1px solid #c2c2c2;
   border-radius: 8px;
   background-color: white;
