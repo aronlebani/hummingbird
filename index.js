@@ -21,7 +21,7 @@ function flatten(bookmarks, folder, result) {
   result.push(category);
 }
 
-function render(bookmarks) {
+function renderCards(bookmarks) {
   const rootNode = document.getElementById("root");
 
   const folderListNode = document.createElement("section");
@@ -93,7 +93,7 @@ function handleSearch(e) {
     bookmark.files = files;
     return files.length > 0;
   });
-  render(bookmarks);
+  renderCards(bookmarks);
 }
 
 function handleKeyup(e) {
@@ -117,6 +117,7 @@ function handleHelpCloseClick() {
 }
 
 function main() {
+  let list = false;
   chrome.bookmarks.getTree(results => {
     let flattened = [];
     flatten(results[0].children, "root", flattened);
@@ -124,7 +125,7 @@ function main() {
       .filter(x => x.name.toLowerCase() != 'ignore')
       .filter(x => x.files.length > 0);
     window.bookmarks = flattened;
-    render(window.bookmarks);
+    renderCards(window.bookmarks);
   });
 
   document.getElementById("search").addEventListener("input", handleSearch);

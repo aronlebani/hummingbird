@@ -9,7 +9,7 @@
     "128": "assets/favicon-128.png"
   },
   "chrome_url_overrides" : {
-    "newtab": "html/index.html"
+    "newtab": "index.html"
   },
   "permissions": [
     "bookmarks"
