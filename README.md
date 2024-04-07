@@ -4,7 +4,7 @@ A light and zippy bookmarks navigator.
 
 ## Description
 
-Hummingbird is a chrome extension that helps you navigate your bookmarks, and find what you're looking for faster. If you want a particular bookmarked webpage, Hummingbird is the quickest way to get from opening a new tab, to looking at that page in your browser.
+Hummingbird is a browser extension that helps you navigate your bookmarks, and find what you're looking for faster. If you want a particular bookmarked webpage, Hummingbird is the quickest way to get from opening a new tab, to looking at that page in your browser.
 
 This extension is for people who heavily utilise bookmarks to organise and retrieve resources on the web as part of their daily workflow. Examples include frequently used web apps and websites, cheatsheets, instructions, and any other reference material. It is for people who need a fast way to find and access those resources with minimal interruption to their workflow.
 
@@ -23,4 +23,4 @@ Hummingbird displays all your bookmarks every time you open a new tab, grouped b
 
 Hummingbird is designed to be as simple as possible and only supports a single level of folder hierarchy. It will display a flattened version of your bookmark folders, but won't touch the structure of your actual bookmarks.
 
-Hummingbird doesn't create, delete, or manage your bookmarks, it simply allows you to navigate them quickly and easily. Managing your bookmarks can be done with Chrome's built in bookmark manager (or a third party bookmark manager).
+Hummingbird doesn't create, delete, or manage your bookmarks, it simply allows you to navigate them quickly and easily. Managing your bookmarks can be done with your browser's built in bookmark manager (or a third party bookmark manager).
